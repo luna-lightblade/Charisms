@@ -1,13 +1,13 @@
 <%= form_for(@quote) do |f| %>
     <%= render 'shared/error_messages', object: @quote %>
 
-    <%= f.label :sayer %>
+    <%= f.label 'Who said it?' %>
     <%= f.text_field :sayer, class: 'form-control' %>
 
     <%= f.label :quote %>
     <%= f.text_field :quote, class: 'form-control' %>
 
-    <%= f.label :context %>
+    <%= f.label 'Context (Optional)' %>
     <%= f.text_field :context, class: 'form-control' %>
 
     <%= f.submit yield(:button_text), class: "btn btn-primary" %>

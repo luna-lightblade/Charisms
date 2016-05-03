@@ -1,5 +1,5 @@
 <li>
   "<%= quote.quote %>"<br>
-  <%= quote.context %><br>
+  <% if not quote.context.empty? %><%= quote.context %><br><% end %>
   - <%= quote.sayer %>
 </li>

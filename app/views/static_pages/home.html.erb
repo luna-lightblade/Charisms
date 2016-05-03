@@ -3,5 +3,9 @@
 
   <h2>A place to chronicle the stupid stuff we say</h2>
 
-  <%= link_to "Sign up now!", signup_url, class: "btn btn-lg btn-primary" %>
+  <% if logged_in? %>
+    <!-- TODO: Something? -->
+  <% else %>
+      <%= link_to "Sign up now!", signup_url, class: "btn btn-lg btn-primary" %>
+  <% end %>
 </div>

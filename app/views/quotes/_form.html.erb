@@ -1,0 +1,14 @@
+<%= form_for(@quote) do |f| %>
+    <%= render 'shared/error_messages', object: @quote %>
+
+    <%= f.label :sayer %>
+    <%= f.text_field :sayer, class: 'form-control' %>
+
+    <%= f.label :quote %>
+    <%= f.text_field :quote, class: 'form-control' %>
+
+    <%= f.label :context %>
+    <%= f.text_field :context, class: 'form-control' %>
+
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

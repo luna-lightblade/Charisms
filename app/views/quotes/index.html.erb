@@ -1,6 +1,8 @@
 <% provide(:title, 'Quotes') %>
-<h1>All Quotes</h1>
 
+<div class = "center">
+  <%= link_to "Add a quote", quotes_add_url, class: "btn btn-lg btn-primary" %>
+</div>
 <%= will_paginate %>
 
 <ul class="quotes">

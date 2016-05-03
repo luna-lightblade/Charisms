@@ -9,4 +9,12 @@ class UserTest < ActiveSupport::TestCase
   test "authenticated? should return false for a user with nil digest" do
     assert_not @user.authenticated?(:remember, '')
   end
+
+  test "associated quotes should be destroyed" do
+    @user.save
+    @user.quotes.create!(quote: "Lorem ipsum", sayer: 'Craig', context: 'Craig is a weird guy')
+    assert_difference 'Quote.count', -1 do
+      @user.destroy
+    end
+  end
 end

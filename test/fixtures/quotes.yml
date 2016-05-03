@@ -20,4 +20,3 @@ most_recent:
   sayer: "Rich"
   context: "Talking about Comcast being the most widespread Internet provider in the US"
   created_at: <%= Time.zone.now %>
-

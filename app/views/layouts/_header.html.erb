@@ -1,6 +1,9 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar <%= mobile_device? ? 'navbar-static-top' : 'navbar-fixed-top' %> navbar-inverse">
+
   <div class="container">
-    <%= link_to "Charisms", root_path, id: "logo" %>
+      <% unless mobile_device? %>
+      <%= link_to "Charisms", root_path, id: "logo" %>
+      <% end %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>

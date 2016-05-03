@@ -1,7 +1,11 @@
 <% provide(:title, 'Quotes') %>
 
 <div class = "center">
-  <%= link_to "Add a quote", quotes_add_url, class: "btn btn-lg btn-primary" %>
+  <% if logged_in? %>
+    <%= link_to "Add a quote", quotes_add_url, class: "btn btn-lg btn-primary" %>
+  <% else %>
+      <%= link_to "Log in to add a quote", login_path, class: "btn btn-lg btn-primary" %>
+  <% end %>
 </div>
 <%= will_paginate %>
 

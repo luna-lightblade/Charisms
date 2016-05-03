@@ -1,4 +1,5 @@
 class QuotesController < ApplicationController
+  before_action :logged_in_user, only: [:new]
 
   def index
     @quotes = Quote.paginate(page: params[:page])
@@ -27,5 +28,14 @@ class QuotesController < ApplicationController
 
   def user_params
     params.require(:quote).permit(:sayer, :quote, :context)
+  end
+
+  # Confirms a logged-in user.
+  def logged_in_user
+    unless logged_in?
+      store_location
+      flash[:danger] = "Please log in."
+      redirect_to login_url
+    end
   end
 end

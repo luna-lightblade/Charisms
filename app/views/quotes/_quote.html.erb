@@ -1,10 +1,20 @@
 <li>
-  "<%= quote.quote %>"<br>
-  - <%= quote.sayer %>
-  <% unless quote.context.empty? %><br><%= quote.context %><% end %>
-  <% if not current_user == nil and (current_user.admin? or quote.user == current_user) %>
-      <br><%= link_to 'delete', quote, method: :delete,
-                      data: { confirm: 'Are you sure you wish to delete this quote?' } %>
-      | <%= link_to 'edit', edit_quote_path(quote)%>
-  <% end %>
+  <table>
+    <tr>
+      <td>
+        <%= quote.likes.count %><br>
+        <%= link_to "Like", controller: 'quotes', action: 'like', :quote => quote %>
+      </td>
+      <td>
+        "<%= quote.quote %>"<br>
+        - <%= quote.sayer %>
+        <% unless quote.context.empty? %><br><%= quote.context %><% end %>
+        <% if not current_user == nil and (current_user.admin? or quote.user == current_user) %>
+        <br><%= link_to 'delete', quote, method: :delete,
+                        data: { confirm: 'Are you sure you wish to delete this quote?' } %>
+        | <%= link_to 'edit', edit_quote_path(quote)%>
+        <% end %>
+      </td>
+    </tr>
+  </table>
 </li>

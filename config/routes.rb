@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get    'contact'   => 'static_pages#contact'
   get    'signup'    => 'users#new'
   get    'quotes/add'=> 'quotes#new'
+  get    'quotes/like'=>'quotes#like'
   get    'login'     => 'sessions#new'
   post   'login'     => 'sessions#create'
   delete 'logout'    => 'sessions#destroy'

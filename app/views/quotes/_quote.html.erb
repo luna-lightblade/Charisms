@@ -1,7 +1,7 @@
 <li>
   "<%= quote.quote %>"<br>
   - <%= quote.sayer %>
-  <% unless quote.context.empty? %><%= quote.context %><% end %><br>
+  <% unless quote.context.empty? %><%= quote.context %><br><% end %><br>
 
   <%= quote.likes.count %> Like<%= like_count(quote) > 1 or like_count(quote) == 0 ? 's': '' %>
   <% unless has_liked?(quote) %>

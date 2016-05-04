@@ -1,6 +1,6 @@
 module LikesHelper
 
-  def like(quote)
-    flash[:info] = "Quote Likes"
+  def has_liked?(quote)
+    Like.where(:user_id => current_user.id, :quote_id => quote.id).count > 0
   end
 end

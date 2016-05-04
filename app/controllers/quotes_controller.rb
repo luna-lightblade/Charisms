@@ -50,7 +50,7 @@ class QuotesController < ApplicationController
     @like.user_id = current_user.id
     @like.quote_id = Quote.find(params[:quote]).id
     @like.save
-    redirect_to quotes_url(@quote, :anchor => "wall")
+    redirect_to quotes_url(@quote, :anchor => 'like')
   end
 
   private

@@ -3,8 +3,8 @@ require 'test_helper'
 class QuoteTest < ActiveSupport::TestCase
 
   def setup
-    @user = users(:archer)
-    @quote = @user.quotes.build(quote: 'Lorem ipsum', sayer: 'Craig', context: 'Craig is a weird guy')
+    @user = users :archer
+    @quote = @user.quotes.build quote: 'Lorem ipsum', sayer: 'Craig', context: 'Craig is a weird guy'
   end
 
   test 'should be valid' do

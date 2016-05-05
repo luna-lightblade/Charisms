@@ -3,7 +3,7 @@ require 'test_helper'
 class QuotesControllerTest < ActionController::TestCase
 
   def setup
-    @user = users(:archer)
+    @user = users :archer
   end
 
   test 'should get index' do

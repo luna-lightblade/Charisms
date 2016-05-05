@@ -1,4 +1,5 @@
 class QuotesController < ApplicationController
+  include UserConcerns
   before_action :logged_in_user, only: [:new]
   before_action :admin_or_user, only: [:edit, :destroy]
 
@@ -53,23 +54,14 @@ class QuotesController < ApplicationController
     redirect_to quotes_url(@quote, :anchor => 'like')
   end
 
+  def unlike
+    Like.where(:user_id => current_user.id, :quote_id => Quote.find(params[:quote]).id).destroy_all
+    redirect_to quotes_url(@quote, :anchor => 'unlike')
+  end
+
   private
 
   def user_params
     params.require(:quote).permit(:sayer, :quote, :context)
-  end
-
-  # Confirms a logged-in user.
-  def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:danger] = 'Please log in.'
-      redirect_to login_url
-    end
-  end
-
-  # Confirms an admin user.
-  def admin_or_user
-    redirect_to(root_url) unless Quote.find(params[:id]).user == current_user or current_user.admin?
   end
 end

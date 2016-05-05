@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get    'signup'    => 'users#new'
   get    'quotes/add'=> 'quotes#new'
   get    'quotes/like'=>'quotes#like'
+  get    'quotes/unlike'=>'quotes#unlike'
   get    'login'     => 'sessions#new'
   post   'login'     => 'sessions#create'
   delete 'logout'    => 'sessions#destroy'

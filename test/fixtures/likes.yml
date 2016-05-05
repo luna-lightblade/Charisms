@@ -1,23 +1,25 @@
 one:
-  quote_id: 2
   user_id: 1
+  quote_id: 2
 
 two:
-  quote_id: 3
   user_id: 1
+  quote_id: 3
+
 
 three:
-  quote_id: 3
   user_id: 2
+  quote_id: 3
 
 four:
-  quote_id: 4
   user_id: 1
+  quote_id: 4
+
 
 five:
-  quote_id: 4
   user_id: 2
+  quote_id: 4
 
 six:
-  quote_id: 4
   user_id: 3
+  quote_id: 4

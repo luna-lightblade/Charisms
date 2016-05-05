@@ -1,9 +1,23 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  quote_id: 1
+  quote_id: 2
   user_id: 1
 
 two:
-  quote_id: 1
+  quote_id: 3
+  user_id: 1
+
+three:
+  quote_id: 3
   user_id: 2
+
+four:
+  quote_id: 4
+  user_id: 1
+
+five:
+  quote_id: 4
+  user_id: 2
+
+six:
+  quote_id: 4
+  user_id: 3

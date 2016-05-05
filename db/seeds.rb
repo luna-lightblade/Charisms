@@ -30,6 +30,6 @@ end
 
 20.times do |n|
   n.times do |i|
-    Like.create!(user_id: i, quote_id: 150 - n)
+    Like.create!(user_id: i+1, quote_id: 150 - n)
   end
 end

@@ -1,27 +1,27 @@
-ecoli:
+danger:
   id: 1
-  quote: "All I do is talk about rats, MJK and ecoli"
-  sayer: "Charlene"
+  quote: "Danger Zone"
+  sayer: "Archer"
   context: ""
   created_at: <%= 10.minutes.ago %>
 
-insert:
+phrasing:
   id: 2
-  quote: "How do you stick it in?"
-  sayer: "Charlene"
-  context: "Talking about using the insert cable"
+  quote: "What, are we not doing phrasing any more?"
+  sayer: "Archer"
+  context: "We should get that back in rotation"
   created_at: <%= 3.years.ago %>
 
-jill:
+hands:
   id: 3
-  quote: "Jilly D!!!"
-  sayer: "Maseo"
-  context: "Jill's new nickname"
+  quote: "I do not have monster hands!"
+  sayer: "Lana"
+  context: "She said, waving her monster hands"
   created_at: <%= 2.hours.ago %>
 
 most_recent:
   id: 4
-  quote: "You can't escape the ass. It's all ass!"
-  sayer: "Rich"
-  context: "Talking about Comcast being the most widespread Internet provider in the US"
+  quote: "You’re not my supervisor!"
+  sayer: "Cheryl"
+  context: ""
   created_at: <%= Time.zone.now %>

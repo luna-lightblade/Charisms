@@ -4,8 +4,8 @@ class LikesHelperTest < ActionView::TestCase
 
   def setup
     @user = users :archer
-    @quote = quotes :ecoli
-    @other_quote = quotes :jill
+    @quote = quotes :danger
+    @other_quote = quotes :hands
   end
 
   test 'has_liked_when_not_liked' do

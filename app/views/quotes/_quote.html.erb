@@ -3,13 +3,16 @@
   - <%= quote.sayer %>
   <% unless quote.context.empty? %><br><%= quote.context %><% end %><br>
 
-  <%= quote.likes.count %> Like<%= like_count(quote) > 1 or like_count(quote) == 0 ? 's': '' %>
-  <% unless has_liked?(quote) %>
-      | <%= link_to 'Like', controller: 'quotes', action: 'like', :quote => quote %>
-  <% end %>
-  <% if not current_user == nil and (current_user.admin? or quote.user == current_user) %>
-      | <%= link_to 'Delete', quote, method: :delete,
-                      data: { confirm: 'Are you sure you wish to delete this quote?' } %>
-      | <%= link_to 'Edit', edit_quote_path(quote)%>
+  <!-- Bottom bar -->
+  <% if current_user != nil %>
+    <%= quote.likes.count %> Like<%= (like_count(quote) > 1 or like_count(quote) == 0) ? 's': '' %>
+    <% unless has_liked?(quote) %>
+        | <%= link_to 'Like', controller: 'quotes', action: 'like', :quote => quote %>
+    <% end %>
+    <% if not current_user == nil and (current_user.admin? or quote.user == current_user) %>
+        | <%= link_to 'Delete', quote, method: :delete,
+                        data: { confirm: 'Are you sure you wish to delete this quote?' } %>
+        | <%= link_to 'Edit', edit_quote_path(quote)%>
+    <% end %>
   <% end %>
 </li>

@@ -1,6 +1,7 @@
 ecoli:
   quote: "All I do is talk about rats, MJK and ecoli"
   sayer: "Charlene"
+  context: ""
   created_at: <%= 10.minutes.ago %>
 
 insert:

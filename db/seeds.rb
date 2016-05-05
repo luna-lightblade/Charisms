@@ -27,3 +27,9 @@ end
                 context: context,
                 user_id: rand(90))
 end
+
+20.times do |n|
+  n.times do |i|
+    Like.create!(user_id: i, quote_id: 150 - n)
+  end
+end

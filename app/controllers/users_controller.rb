@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @submitted_quotes = Quote.where(user: @user)
   end
 
   def new

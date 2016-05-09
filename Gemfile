@@ -14,7 +14,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # Utilities
 gem 'turbolinks'
 gem 'will_paginate',           '3.0.7'
-gem 'will_paginate-bootstrap'
+gem 'bootstrap-will_paginate'
 gem 'jbuilder',                '~> 2.0'
 gem 'sdoc',                    '~> 0.4.0', group: :doc
 gem 'bcrypt',                  '~> 3.1.7'

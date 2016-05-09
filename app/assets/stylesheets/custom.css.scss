@@ -227,7 +227,9 @@ input {
 
   .row {
     .col-md-8 {
-      color: $gray-lighter;
+      a {
+        color: $gray-lighter;
+      }
     }
   }
 }

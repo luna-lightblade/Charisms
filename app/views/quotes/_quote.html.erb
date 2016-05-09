@@ -10,9 +10,9 @@
     </a>
 
     <% if has_liked?(current_user, quote) %>
-        | <%= link_to 'Unlike', {controller: 'quotes', action: 'unlike', :quote => quote, method: :post}, remote: true %>
+        | <%= link_to 'Unlike', get_like(current_user, quote), remote: true, method: :delete %>
     <% else %>
-        | <%= link_to 'Like', {controller: 'quotes', action: 'like', :quote => quote, method: :post}, remote: true %>
+        | <%= link_to 'Like', get_like(current_user, quote), remote: true, method: :put %>
     <% end %>
     <% if not current_user == nil and (current_user.admin? or quote.user == current_user) %>
         | <%= link_to 'Delete', quote, method: :delete,

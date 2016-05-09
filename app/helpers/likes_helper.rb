@@ -10,10 +10,14 @@ module LikesHelper
 
   def users_who_liked(quote)
     likes = Like.where(:quote_id => quote.id).to_ary
-    users = ""
+    users = ''
     likes.each {|like|
       users << like.user.name << "\n"
     }
     users
+  end
+
+  def get_like(user, quote)
+    Like.where(:user_id => user.id, :quote_id => quote.id).first
   end
 end

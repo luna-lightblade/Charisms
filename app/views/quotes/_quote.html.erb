@@ -10,9 +10,9 @@
     </a>
 
     <% if has_liked?(current_user, quote) %>
-        | <%= link_to 'Unlike', get_like(current_user, quote), remote: true, method: :delete %>
+        | <%= link_to 'Unlike', get_like(current_user, quote), remote: true, method: :delete, 'data-no-turbolink' => true %>
     <% else %>
-        | <%= link_to 'Like'  , {controller: :likes, action: :create, :user => current_user, :quote => quote}, remote: true %>
+        | <%= link_to 'Like'  , {controller: :likes, action: :create, :user => current_user, :quote => quote}, remote: true, 'data-no-turbolink' => true %>
     <% end %>
     <% if not current_user == nil and (current_user.admin? or quote.user == current_user) %>
         | <%= link_to 'Delete', quote, method: :delete,

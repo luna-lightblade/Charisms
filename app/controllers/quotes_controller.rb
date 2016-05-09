@@ -46,17 +46,6 @@ class QuotesController < ApplicationController
     redirect_to quotes_url
   end
 
-  def like
-    @like = Like.new
-    @like.user_id = current_user.id
-    @like.quote_id = Quote.find(params[:quote]).id
-    @like.save
-  end
-
-  def unlike
-    Like.where(:user_id => current_user.id, :quote_id => Quote.find(params[:quote]).id).destroy_all
-  end
-
   private
 
   def user_params

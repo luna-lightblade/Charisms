@@ -12,7 +12,7 @@
     <% if has_liked?(current_user, quote) %>
         | <%= link_to 'Unlike', get_like(current_user, quote), remote: true, method: :delete %>
     <% else %>
-        | <%= link_to 'Like', get_like(current_user, quote), remote: true, method: :put %>
+        | <%= link_to 'Like'  , {controller: :likes, action: :create, :user => current_user, :quote => quote}, remote: true %>
     <% end %>
     <% if not current_user == nil and (current_user.admin? or quote.user == current_user) %>
         | <%= link_to 'Delete', quote, method: :delete,

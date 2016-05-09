@@ -1,14 +1,15 @@
 class LikesController < ApplicationController
 
   def new
+    puts "IINEW"
     @like = Like.new
   end
 
   def create
     puts "IILIKE"
     @like = Like.new
-    @like.user_id = current_user.id
-    @like.quote_id = Quote.find(params[:quote]).id
+    @like.user_id = params[:user]
+    @like.quote_id = params[:quote]
     @like.save
   end
 

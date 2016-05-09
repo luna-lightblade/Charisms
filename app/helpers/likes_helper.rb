@@ -8,6 +8,10 @@ module LikesHelper
     Like.where(:quote_id => quote.id).count
   end
 
+  def like_amount(user)
+    Like.where(:user_id => user.id).count
+  end
+
   def users_who_liked(quote)
     likes = Like.where(:quote_id => quote.id).to_ary
     users = ''

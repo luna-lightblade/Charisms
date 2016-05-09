@@ -1,5 +1,6 @@
 danger:
   id: 1
+  user_id: 3
   quote: "Danger Zone"
   sayer: "Archer"
   context: ""
@@ -7,6 +8,7 @@ danger:
 
 phrasing:
   id: 2
+  user_id: 1
   quote: "What, are we not doing phrasing any more?"
   sayer: "Archer"
   context: "We should get that back in rotation"
@@ -14,6 +16,7 @@ phrasing:
 
 hands:
   id: 3
+  user_id: 2
   quote: "I do not have monster hands!"
   sayer: "Lana"
   context: "She said, waving her monster hands"
@@ -21,6 +24,7 @@ hands:
 
 most_recent:
   id: 4
+  user_id: 3
   quote: "You’re not my supervisor!"
   sayer: "Cheryl"
   context: ""

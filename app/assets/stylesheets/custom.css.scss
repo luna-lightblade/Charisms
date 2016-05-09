@@ -224,6 +224,12 @@ input {
       color: $gray;
     }
   }
+
+  .row {
+    .col-md-8 {
+      color: $gray-lighter;
+    }
+  }
 }
 
 .tooltip-inner {

@@ -4,20 +4,27 @@
   <% unless quote.context.empty? %><br><%= quote.context %><% end %><br>
 
   <!-- Bottom bar -->
-  <% if current_user != nil %>
-  <a href="#" data-toggle="tooltip" data-placement="auto top" title="<%= users_who_liked(quote) %>">
-      <%= quote.likes.count %> Like<%= (like_count(quote) > 1 or like_count(quote) == 0) ? 's': '' %>
-    </a>
+  <div class ="row">
+    <div class="col-md-4">
+      <% if current_user != nil %>
+      <a href="#" data-toggle="tooltip" data-placement="auto top" title="<%= users_who_liked(quote) %>">
+          <%= quote.likes.count %> Like<%= (like_count(quote) > 1 or like_count(quote) == 0) ? 's': '' %>
+        </a>
 
-    <% if has_liked?(current_user, quote) %>
-        | <%= link_to 'Unlike', get_like(current_user, quote), remote: true, method: :delete, 'data-no-turbolink' => true %>
-    <% else %>
-        | <%= link_to 'Like'  , {controller: :likes, action: :create, :user => current_user, :quote => quote}, remote: true, 'data-no-turbolink' => true %>
-    <% end %>
-    <% if not current_user == nil and (current_user.admin? or quote.user == current_user) %>
-        | <%= link_to 'Delete', quote, method: :delete,
-                        data: { confirm: 'Are you sure you wish to delete this quote?' } %>
-        | <%= link_to 'Edit', edit_quote_path(quote)%>
-    <% end %>
-  <% end %>
+        <% if has_liked?(current_user, quote) %>
+            | <%= link_to 'Unlike', get_like(current_user, quote), remote: true, method: :delete, 'data-no-turbolink' => true %>
+        <% else %>
+            | <%= link_to 'Like'  , {controller: :likes, action: :create, :user => current_user, :quote => quote}, remote: true, 'data-no-turbolink' => true %>
+        <% end %>
+        <% if not current_user == nil and (current_user.admin? or quote.user == current_user) %>
+            | <%= link_to 'Delete', quote, method: :delete,
+                            data: { confirm: 'Are you sure you wish to delete this quote?' } %>
+            | <%= link_to 'Edit', edit_quote_path(quote)%>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col-md-8 text-right">
+      <%= quote.user.name %>
+    </div>
+  </div>
 </li>

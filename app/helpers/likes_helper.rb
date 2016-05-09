@@ -9,7 +9,13 @@ module LikesHelper
   end
 
   def like_amount(user)
-    Like.where(:user_id => user.id).count
+    quotes = Quote.where(:user_id => user.id)
+
+    total = 0
+    quotes.each do |quote|
+      total += quote.likes.count
+    end
+    total
   end
 
   def users_who_liked(quote)
